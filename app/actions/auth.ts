@@ -8,9 +8,9 @@ export type AuthState = {
 }
 
 export async function register(
-  prevState: AuthState | null,
+  prevState: AuthState,
   formData: FormData
-): Promise<AuthState | void> {
+): Promise<AuthState> {
   const email = formData.get('email')?.toString()
   const password = formData.get('password')?.toString()
 
@@ -29,9 +29,9 @@ export async function register(
 }
 
 export async function login(
-  prevState: AuthState | null,
+  prevState: AuthState,
   formData: FormData
-): Promise<AuthState | void> {
+): Promise<AuthState> {
   const email = formData.get('email')?.toString()
   const password = formData.get('password')?.toString()
 
